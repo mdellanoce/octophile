@@ -94,7 +94,7 @@
   <body>
     <a id="follow-button" href="javascript:void(0)" class="button primary">Follow Me On GitHub</a>
     <script type="text/javascript">
-    var kv, hash = {}, pairs = location.hash.split('&');
+    var kv, hash = {}, pairs = location.hash.substring(1).split('&');
     for (var i=0,ii=pairs.length; i<ii; i++) {
       kv = pairs[i].split('=');
       hash[kv[0]] = kv[1];
@@ -105,6 +105,8 @@
       follow = function() {
         window.open('/follow/' + user, 'followme', 'location=0,status=0,scrollbars=0,width=1000,height=450');
       };
+    
+    b.setAttribute('title', 'Follow ' + user + ' on GitHub');
     
     if (b.addEventListener) {
       b.addEventListener('click', follow, false);
