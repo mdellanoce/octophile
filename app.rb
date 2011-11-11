@@ -1,21 +1,26 @@
 require 'sinatra'
 require 'httparty'
 
+module Form
+  def parse_form(form_data)
+    hash = {}
+    form_data.split("&").each do |pair|
+      key,value = pair.split("=")
+      hash[key] = value
+    end
+    hash
+  end
+end
+
 class Token
   include HTTParty
+  include Form
   
   base_uri "https://github.com"
   
-  def initialize(code)
-    params = {
-      :client_id => "148718244dbf91ab58bc",
-      :client_secret => "e065813ece4e5738c0a37aa7b11e5da7db4d27bf",
-      :code => code
-    }
-    query = "?client_id=" + params[:client_id] + "&client_secret=" + params[:client_secret] + "&code=" + params[:code]
-    @access_token = self.class.post("/login/oauth/access_token" + query)
-
-    #access_token=X&type_bearer=Y
+  def initialize(params)
+    response = self.class.post "/login/oauth/access_token", :query => params
+    @access_token = parse_form(response)["access_token"]
   end
   
   def to_s
@@ -30,5 +35,9 @@ end
 get '/follow/:user' do
   user = params[:user]
   code = params[:code]
-  token = Token.new code
+  token = Token.new({
+    :client_id => "148718244dbf91ab58bc",
+    :client_secret => "e065813ece4e5738c0a37aa7b11e5da7db4d27bf",
+    :code => code
+  })
 end
