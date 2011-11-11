@@ -1,31 +1,40 @@
 require 'sinatra'
 require 'httparty'
 
-module Form
-  def parse_form(form_data)
-    hash = {}
-    form_data.split("&").each do |pair|
-      key,value = pair.split("=")
-      hash[key] = value
+module HTTParty
+  class Parser
+    class Form < HTTParty::Parser
+      SupportedFormats.merge!({"application/x-www-form-urlencoded" => :form})
+      
+      protected
+      
+      def form
+        hash = {}
+        body.split("&").each do |pair|
+          key,value = pair.split("=")
+          hash[key] = value
+        end
+        hash
+      end
     end
-    hash
   end
 end
 
 class Token
   include HTTParty
-  include Form
   
   base_uri "https://github.com"
   
   def initialize(params)
     response = self.class.post "/login/oauth/access_token", :query => params
-    @access_token = parse_form(response)["access_token"]
+    @access_token = response["access_token"]
   end
   
   def to_s
     @access_token
   end
+  
+  parser Parser::Form
 end
 
 class User
