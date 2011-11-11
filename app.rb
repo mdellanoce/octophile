@@ -58,13 +58,20 @@ get '/' do
 end
 
 get '/follow/:user' do
+  client_id = "148718244dbf91ab58bc"
   code = params[:code]
-  token = Token.new({
-    :client_id => "148718244dbf91ab58bc",
-    :client_secret => "e065813ece4e5738c0a37aa7b11e5da7db4d27bf",
-    :code => code
-  })
   
-  user = User.new token
-  user.follow params[:user]
+  if code
+    token = Token.new({
+      :client_id => client_id,
+      :client_secret => "e065813ece4e5738c0a37aa7b11e5da7db4d27bf",
+      :code => code
+    })
+    
+    user = User.new token
+    user.follow params[:user]
+  else
+    query = "scope=user&client_id=#{client_id}&redirect_uri=#{request.url}"
+    redirect "https://github.com/login/oauth/authorize?#{query}"
+  end
 end
