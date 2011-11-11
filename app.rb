@@ -28,16 +28,34 @@ class Token
   end
 end
 
+class User
+  include HTTParty
+  
+  base_uri "https://api.github.com"
+  
+  def initialize(token)
+    @token = token
+  end
+  
+  def follow(user)
+    response = self.class.put "/user/following/#{user}", :query => {:access_token => @token.to_s}, :headers => {"Content-Length" => "0"}
+    status = response.headers["status"] || response.response.class.name
+    raise "Failed to follow #{user}: #{status}" if response.code != 204
+  end
+end
+
 get '/' do
   erb :index
 end
 
 get '/follow/:user' do
-  user = params[:user]
   code = params[:code]
   token = Token.new({
     :client_id => "148718244dbf91ab58bc",
     :client_secret => "e065813ece4e5738c0a37aa7b11e5da7db4d27bf",
     :code => code
   })
+  
+  user = User.new token
+  user.follow params[:user]
 end
