@@ -76,6 +76,8 @@ get '/follow/:user' do
     
     user = User.new token
     user.follow params[:user]
+
+    erb :follow
   else
     query = "scope=user&client_id=#{client_id}&redirect_uri=#{request.url}"
     redirect "https://github.com/login/oauth/authorize?#{query}"
