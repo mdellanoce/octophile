@@ -19,4 +19,4 @@
       parent.appendChild(iframe);
     }
   }
-})('http://followme.mikedellanoce.com/follow_button.html');
+})('http://octophile.mikedellanoce.com/follow_button.html');

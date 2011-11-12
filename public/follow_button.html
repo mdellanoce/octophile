@@ -6,6 +6,18 @@
     body {
       margin: 0;
       padding: 0;
+      line-height: 25px;
+      font:11px/normal sans-serif; 
+    }
+
+    .link {
+      font-weight: bold;
+      color: #4183C4;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      text-decoration: underline;
     }
     
     /* ------------------------------------------
@@ -22,7 +34,6 @@
         margin: 0;
         text-decoration: none; 
         text-shadow: 1px 1px 0 #fff; 
-        font:11px/normal sans-serif; 
         color: #333; 
         white-space: nowrap; 
         cursor: pointer; 
@@ -113,7 +124,8 @@
     </style>
   </head>
   <body>
-    <a id="follow-button" href="javascript:void(0)" class="button primary icon user">Follow Me On GitHub</a>
+    <a id="follow-button" href="javascript:void(0)" class="button primary icon user">Follow</a>
+    <a id="profile-link" class="link">On GitHub</a>
     <script type="text/javascript">
     var kv, hash = {}, pairs = location.hash.substring(1).split('&');
     for (var i=0,ii=pairs.length; i<ii; i++) {
@@ -122,12 +134,14 @@
     }
     
     var b = document.getElementById('follow-button'),
+      p = document.getElementById('profile-link'),
       user = hash['user'],
       follow = function() {
         window.open('/follow/' + user, 'followme', 'location=0,status=0,scrollbars=0,width=1000,height=450');
       };
     
     b.setAttribute('title', 'Follow ' + user + ' on GitHub');
+    p.setAttribute('href', 'https://github.com/' + user);
     
     if (b.addEventListener) {
       b.addEventListener('click', follow, false);

@@ -1,4 +1,4 @@
-This project provides Twitter-style follow buttons for GitHub that you can place on your personal blog... or anywhere you want, really.
+This project provides Twitter-style follow buttons for GitHub that you can place on your personal site... or anywhere you want, really.
 
 # Using the button
 
@@ -6,7 +6,7 @@ Place the following on your webpage where you want the button to appear:
 
 ```html
 <a href="https://github.com/YOURUSERNAME" class="github-follow-button">Follow Me On GitHub</a>
-<script type="text/javascript" src="http://followme.mikedellanoce.com/followme.js"></script>
+<script type="text/javascript" src="http://octophile.mikedellanoce.com/widgets.js"></script>
 ```
 
 You can put as many anchor tags as you want on a given page, even with different usernames.
@@ -20,7 +20,7 @@ Install the dependencies:
 bundle install
 ```
 
-You will need to register an application with GitHub at https://github.com/account/applications/new.
+You will need to [register an application with GitHub](https://github.com/account/applications/new).
 Set your client ID and client secret in your .bashrc or .bash_profile (or equivalents for whichever shell you use):
 
 ```
