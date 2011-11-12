@@ -44,6 +44,27 @@
         *display: inline; 
     }
 
+    .button.icon:before {
+        content: "";
+        position: relative; 
+        top: 1px; 
+        float:left;
+        width: 12px; 
+        height: 12px; 
+        margin: 0 0.75em 0 -0.25em; 
+        background: url(gh-icons.png) 0 99px no-repeat;
+    }
+
+    .button.approve.icon:before { background-position: 0 -48px; }
+    .button.approve.icon:hover:before,
+    .button.approve.icon:focus:before,
+    .button.approve.icon:active:before { background-position: -12px -48px; }
+
+    .button.user.icon:before { background-position: 0 -360px; }
+    .button.user.icon:hover:before,
+    .button.user.icon:focus:before,
+    .button.user.icon:active:before { background-position: -12px -360px; }
+
     .button:hover,
     .button:focus,
     .button:active,
@@ -92,7 +113,7 @@
     </style>
   </head>
   <body>
-    <a id="follow-button" href="javascript:void(0)" class="button primary">Follow Me On GitHub</a>
+    <a id="follow-button" href="javascript:void(0)" class="button primary icon user">Follow Me On GitHub</a>
     <script type="text/javascript">
     var kv, hash = {}, pairs = location.hash.substring(1).split('&');
     for (var i=0,ii=pairs.length; i<ii; i++) {
@@ -113,6 +134,11 @@
     } else if (b.attachEvent) {
       b.attachEvent('onclick', follow);
     }
+
+    function followed() {
+      b.className = b.className.replace('user', 'approve');
+      b.setAttribute('title', 'You are following ' + user + ' on GitHub');
+    };
     </script>
   </body>
 </html>
