@@ -4,7 +4,7 @@
   
   for (i=0, ii=anchors.length; i<ii; i++) {
     anchor = anchors[i];
-    if (anchor.className.indexOf('github-follow-button') >= 0) {
+    if (anchor && anchor.className && anchor.className.indexOf('github-follow-button') >= 0) {
       href = anchor.getAttribute('href');
       user = href.substring(href.lastIndexOf('/') + 1);
       parent = anchor.parentNode;
