@@ -6,7 +6,7 @@ Place the following on your webpage where you want the button to appear:
 
 ```html
 <a href="https://github.com/YOURUSERNAME" class="github-follow-button">Follow Me On GitHub</a>
-<script type="text/javascript" src="http://octophile.mikedellanoce.com/widgets.js"></script>
+<script type="text/javascript" src="http://octophile.com/widgets.js"></script>
 ```
 
 You can put as many anchor tags as you want on a given page, even with different usernames.
