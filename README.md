@@ -3,6 +3,7 @@ This project provides Twitter-style follow buttons for GitHub that you can place
 # Running the app
 
 Install the dependencies:
+
 ```
 bundle install
 ```
