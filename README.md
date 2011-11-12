@@ -20,7 +20,7 @@ Install the dependencies:
 bundle install
 ```
 
-You will need to register an application with GitHub at https://github.com/account/applications/4227
+You will need to register an application with GitHub at https://github.com/account/applications/new.
 Set your client ID and client secret in your .bashrc or .bash_profile (or equivalents for whichever shell you use):
 
 ```
