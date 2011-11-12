@@ -8,6 +8,8 @@ client_secret = ENV[SECRET_KEY]
 
 raise "Expected environment variables #{ID_KEY} and #{SECRET_KEY}" if !client_id or !client_secret
 
+set :protection, :except => :frame_options
+
 module HTTParty
   class Parser
     class Form < HTTParty::Parser
