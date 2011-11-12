@@ -19,4 +19,4 @@
       parent.appendChild(iframe);
     }
   }
-})('http://localhost:8080/follow_button.html');
+})('http://followme.mikedellanoce.com/follow_button.html');
