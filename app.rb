@@ -1,6 +1,13 @@
 require 'sinatra'
 require 'httparty'
 
+ID_KEY = 'GITHUB_CLIENT_ID'
+SECRET_KEY = 'GITHUB_CLIENT_SECRET'
+client_id = ENV[ID_KEY]
+client_secret = ENV[SECRET_KEY]
+
+raise "Expected environment variables #{ID_KEY} and #{SECRET_KEY}" if !client_id or !client_secret
+
 module HTTParty
   class Parser
     class Form < HTTParty::Parser
@@ -58,13 +65,12 @@ get '/' do
 end
 
 get '/follow/:user' do
-  client_id = "148718244dbf91ab58bc"
   code = params[:code]
   
   if code
     token = Token.new({
       :client_id => client_id,
-      :client_secret => "e065813ece4e5738c0a37aa7b11e5da7db4d27bf",
+      :client_secret => client_secret,
       :code => code
     })
     

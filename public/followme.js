@@ -18,4 +18,4 @@
       parent.appendChild(iframe);
     }
   }
-})('http://localhost:4567/follow_button.html');
+})('http://localhost:8080/follow_button.html');
