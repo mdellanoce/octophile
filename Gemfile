@@ -1,4 +1,4 @@
 source :rubygems
 
 gem 'sinatra'
-gem 'httparty'
+gem 'gittycat', :git => "git://github.com/mdellanoce/gittycat.git"

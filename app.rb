@@ -1,8 +1,6 @@
+require 'bundler/setup'
 require 'sinatra'
-
-$:.unshift File.join(settings.root, 'lib')
-
-require 'github'
+require 'gittycat'
 
 ID_KEY = 'GITHUB_CLIENT_ID'
 SECRET_KEY = 'GITHUB_CLIENT_SECRET'
@@ -21,13 +19,13 @@ get '/follow/:user' do
   code = params[:code]
   
   if code
-    token = Token.new({
+    token = GittyCat::Token.new({
       :client_id => client_id,
       :client_secret => client_secret,
       :code => code
     })
     
-    user = User.new token
+    user = GittyCat::User.new token
     user.follow params[:user]
 
     erb :follow

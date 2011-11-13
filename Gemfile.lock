@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/mdellanoce/gittycat.git
+  revision: 2c10efb13bb192a03353ddc817510691a45365f5
+  specs:
+    gittycat (0.0.1)
+      httparty (~> 0.8.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -19,5 +26,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  httparty
+  gittycat!
   sinatra
