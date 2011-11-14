@@ -1,5 +1,6 @@
 body {
   font-family: helvetica,arial,freesans,clean,sans-serif;
+  text-align: center;
 }
 
 a {
@@ -12,6 +13,12 @@ a:hover {
   text-decoration: underline;
 }
 
+#content {
+  text-align: left;
+  margin: 0 auto;
+  width: 350px;
+}
+
 #username,#html {
   display: block;
   width: 300px;
@@ -19,4 +26,8 @@ a:hover {
 
 #html {
   height: 80px;
+}
+
+form {
+  padding-bottom: 1em;
 }

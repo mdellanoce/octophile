@@ -5,8 +5,7 @@
     return false;
   });
 
-  var username = $('#username'),
-    user = username.val();
+  var username = $('#username'), user;
   setInterval(function() {
     if (user !== username.val()) {
       user = username.val();
