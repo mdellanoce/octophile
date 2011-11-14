@@ -3,6 +3,17 @@ body {
   text-align: center;
 }
 
+body, div, form {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 a {
   text-decoration: none;
   font-weight: bold;
@@ -17,6 +28,7 @@ a:hover {
   text-align: left;
   margin: 0 auto;
   width: 310px;
+  padding-bottom: 3em;
 }
 
 #username,#html {
@@ -30,4 +42,20 @@ a:hover {
 
 form {
   padding-bottom: 1em;
+}
+
+html, body, #container { height: 100%; }
+body > #container { height: auto; min-height: 100%; }
+
+#footer {
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 3em;
+  margin-top: -3em;
+  line-height: 3em !important;
+}
+
+#footer iframe {
+  vertical-align: baseline !important;
 }
