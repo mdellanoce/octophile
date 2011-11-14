@@ -127,7 +127,7 @@
     <a id="follow-button" href="javascript:void(0)" class="button primary icon user">Follow</a>
     <a id="profile-link" target="_blank" class="link">On GitHub</a>
     <script type="text/javascript">
-    var kv, hash = {}, pairs = location.hash.substring(1).split('&');
+    var kv, hash = {}, pairs = (location.hash == "" ? location.search : location.hash).substring(1).split('&');
     for (var i=0,ii=pairs.length; i<ii; i++) {
       kv = pairs[i].split('=');
       hash[kv[0]] = kv[1];
