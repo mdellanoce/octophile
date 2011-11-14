@@ -15,7 +15,7 @@
       iframe.setAttribute('allowtransparency', 'true');
       iframe.setAttribute('frameborder', '0');
       iframe.setAttribute('scrolling', 'no');
-      iframe.style.height = "25px";
+      iframe.style.height = "20px";
       parent.appendChild(iframe);
     }
   }
