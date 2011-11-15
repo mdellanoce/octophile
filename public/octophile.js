@@ -15,7 +15,7 @@
         '<script type="text/javascript" src="http://octophile.com/widgets.js"></script>');
 
       $('iframe').attr('src', function(i, src) {
-        return src.replace(/user=(.+)/, 'user=' + user);
+        return src.replace(/user=(.*)/, 'user=' + user);
       });
     }
   }, 250);
