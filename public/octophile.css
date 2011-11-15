@@ -9,9 +9,11 @@ body, div, form {
 }
 
 h1 {
-  margin: 0;
+  margin: 0 auto;
+  width: 500px;
   padding-top: 1em;
-  padding-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px dotted #DDD;
 }
 
 a {
@@ -34,6 +36,11 @@ a:hover {
 #username,#html {
   display: block;
   width: 300px;
+  border: 1px solid #DDD;
+  padding: 3px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 
 #html {
@@ -41,6 +48,7 @@ a:hover {
 }
 
 form {
+  padding-top: 1em;
   padding-bottom: 1em;
 }
 
@@ -58,4 +66,15 @@ body > #container { height: auto; min-height: 100%; }
 
 #footer iframe {
   vertical-align: baseline !important;
+}
+
+#footer {
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(left,  #ffffff 0%, #dddddd 50%, #ffffff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(50%,#dddddd), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #ffffff 0%,#dddddd 50%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #ffffff 0%,#dddddd 50%,#ffffff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #ffffff 0%,#dddddd 50%,#ffffff 100%); /* IE10+ */
+  background: linear-gradient(left,  #ffffff 0%,#dddddd 50%,#ffffff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 }
