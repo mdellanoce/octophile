@@ -128,7 +128,7 @@
     </style>
   </head>
   <body>
-    <a id="follow-button" class="button primary icon user">Follow</a>
+    <a id="follow-button" class="button primary icon approve">Follow</a>
     <a id="profile-link" class="link">On GitHub</a>
     <script type="text/javascript">
     var kv, hash = {}, pairs = (location.hash == "" ? location.search : location.hash).substring(1).split('&');
@@ -153,11 +153,6 @@
       b.attachEvent('onclick', follow);
       p.attachEvent('onclick', follow);
     }
-
-    function followed() {
-      b.className = b.className.replace('user', 'approve');
-      b.setAttribute('title', 'You are following ' + user + ' on GitHub');
-    };
     </script>
   </body>
 </html>

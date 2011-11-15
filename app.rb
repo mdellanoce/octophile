@@ -29,7 +29,7 @@ get '/follow/:user' do
     user = GittyCat::User.new token
     user.follow params[:user]
 
-    erb :follow
+    redirect "https://github.com/#{params[:user]}"
   else
     query = "scope=user&client_id=#{client_id}&redirect_uri=#{request.url}"
     redirect "https://github.com/login/oauth/authorize?#{query}"
