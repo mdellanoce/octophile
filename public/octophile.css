@@ -1,7 +1,6 @@
 body {
   font-family: helvetica,arial,freesans,clean,sans-serif;
   text-align: center;
-  background: url(/octocat.png) no-repeat bottom right;
 }
 
 body, div, form {
@@ -55,6 +54,10 @@ form {
 
 html, body, #container { height: 100%; }
 body > #container { height: auto; min-height: 100%; }
+
+#container {
+  background: url(/octocat.png) no-repeat bottom right;
+}
 
 #footer {
   clear: both;
