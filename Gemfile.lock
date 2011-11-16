@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/mdellanoce/gittycat.git
-  revision: 2c10efb13bb192a03353ddc817510691a45365f5
+  revision: 6631025a99083539f3f848da618ed30326e7389a
   specs:
     gittycat (0.0.1)
       httparty (~> 0.8.1)

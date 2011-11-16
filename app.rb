@@ -20,14 +20,13 @@ get '/follow/:user' do
   code = params[:code]
   
   if code
-    token = GittyCat::Token.new({
+    connection = GittyCat::Connection.new({
       :client_id => client_id,
       :client_secret => client_secret,
       :code => code
     })
     
-    user = GittyCat::User.new token
-    user.follow params[:user]
+    connection.user.follow params[:user]
 
     redirect "https://github.com/#{params[:user]}"
   else
