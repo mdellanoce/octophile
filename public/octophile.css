@@ -57,7 +57,7 @@ html, body, #container { height: 100%; }
 body > #container { height: auto; min-height: 100%; }
 
 #container {
-  background: url(/octocat.png) no-repeat bottom right;
+  background: url(images/octocat.png) no-repeat bottom right;
 }
 
 #footer {
