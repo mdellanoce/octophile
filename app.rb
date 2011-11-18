@@ -12,7 +12,7 @@ raise "Expected environment variables #{ID_KEY} and #{SECRET_KEY}" if !client_id
 set :protection, :except => :frame_options
 
 get '/' do
-  @title = "Social media widgets for GitHub"
+  @title = "GitHub widgets for your website"
   erb :index
 end
 
