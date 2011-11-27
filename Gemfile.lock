@@ -27,4 +27,4 @@ PLATFORMS
 
 DEPENDENCIES
   gittycat!
-  sinatra
+  sinatra (~> 1.3)
