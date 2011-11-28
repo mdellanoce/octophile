@@ -14,7 +14,6 @@ h1 {
   width: 500px;
   padding-top: 1em;
   padding-bottom: 0.5em;
-  border-bottom: 1px dotted #DDD;
 }
 
 a {
@@ -25,6 +24,16 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+#description {
+  width: 500px;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+h1, #description {
+  border-bottom: 1px dotted #DDD;
 }
 
 #content {
