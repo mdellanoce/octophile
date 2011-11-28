@@ -54,22 +54,6 @@ http://github.com/necolas/css3-github-buttons
   *display: inline; 
 }
 
-.button.icon:before {
-  content: "";
-  position: relative; 
-  top: 1px; 
-  float:left;
-  width: 12px; 
-  height: 12px; 
-  margin: 0 5px 0 0; 
-  background: url(images/gh-icons.png) 0 99px no-repeat;
-}
-
-.button.approve.icon:before { background-position: 0 0; }
-.button.approve.icon:hover:before,
-.button.approve.icon:focus:before,
-.button.approve.icon:active:before { background-position: -12px 0; }
-
 .button:hover,
 .button:focus,
 .button:active,

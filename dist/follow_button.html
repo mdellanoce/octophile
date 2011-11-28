@@ -59,22 +59,6 @@ http://github.com/necolas/css3-github-buttons
   *display: inline; 
 }
 
-.button.icon:before {
-  content: "";
-  position: relative; 
-  top: 1px; 
-  float:left;
-  width: 12px; 
-  height: 12px; 
-  margin: 0 5px 0 0; 
-  background: url(images/gh-icons.png) 0 99px no-repeat;
-}
-
-.button.approve.icon:before { background-position: 0 0; }
-.button.approve.icon:hover:before,
-.button.approve.icon:focus:before,
-.button.approve.icon:active:before { background-position: -12px 0; }
-
 .button:hover,
 .button:focus,
 .button:active,
@@ -123,7 +107,7 @@ http://github.com/necolas/css3-github-buttons
 </style>
 </head>
 <body>
-    <a id="follow-button" class="button primary icon approve">Follow</a>
+    <a id="follow-button" class="button primary">Follow</a>
     <a id="profile-link" class="link">On GitHub</a>
     <script type="text/javascript">(function(){var a,b={},c=(location.hash==""?location.search:location.hash).substring(1).split("&");for(var d=0,e=c.length;d<e;d++)a=c[d].split("="),b[a[0]]=a[1];var f=document.getElementById("follow-button"),g=document.getElementById("profile-link"),h=b.user,i=function(){window.open("/follow/"+h,"followme","location=0,status=0,scrollbars=0,width=1000,height=450")};f.setAttribute("title","Follow "+h+" on GitHub"),f.addEventListener?(f.addEventListener("click",i,!1),g.addEventListener("click",i,!1)):f.attachEvent&&(f.attachEvent("onclick",i),g.attachEvent("onclick",i))})()</script>
 </body>
