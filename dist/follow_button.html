@@ -130,6 +130,6 @@ http://github.com/necolas/css3-github-buttons
 <body>
     <a id="follow-button" class="button primary icon approve">Follow</a>
     <a id="profile-link" class="link">On GitHub</a>
-    <script type="text/javascript">var kv,hash={},pairs=(location.hash==""?location.search:location.hash).substring(1).split("&");for(var i=0,ii=pairs.length;i<ii;i++)kv=pairs[i].split("="),hash[kv[0]]=kv[1];var b=document.getElementById("follow-button"),p=document.getElementById("profile-link"),user=hash.user,follow=function(){window.open("/follow/"+user,"followme","location=0,status=0,scrollbars=0,width=1000,height=450")};b.setAttribute("title","Follow "+user+" on GitHub"),b.addEventListener?(b.addEventListener("click",follow,!1),p.addEventListener("click",follow,!1)):b.attachEvent&&(b.attachEvent("onclick",follow),p.attachEvent("onclick",follow))</script>
+    <script type="text/javascript">(function(){var a,b={},c=(location.hash==""?location.search:location.hash).substring(1).split("&");for(var d=0,e=c.length;d<e;d++)a=c[d].split("="),b[a[0]]=a[1];var f=document.getElementById("follow-button"),g=document.getElementById("profile-link"),h=b.user,i=function(){window.open("/follow/"+h,"followme","location=0,status=0,scrollbars=0,width=1000,height=450")};f.setAttribute("title","Follow "+h+" on GitHub"),f.addEventListener?(f.addEventListener("click",i,!1),g.addEventListener("click",i,!1)):f.attachEvent&&(f.attachEvent("onclick",i),g.attachEvent("onclick",i))})()</script>
 </body>
 </html>
