@@ -1,3 +1,4 @@
+require 'base64'
 require 'fileutils'
 require 'nokogiri'
 require 'uglifier'
@@ -25,7 +26,7 @@ task :minify => :copy do
   end
 end
 
-desc "Combines scripts, stylesheets, and HTML files"
+desc "Combines scripts, stylesheets, images, and HTML files"
 task :combine => :minify do
   file = "#{dist}/follow_button.html"
   html = File.read file
@@ -34,8 +35,17 @@ task :combine => :minify do
   head = doc.xpath("//head").first
   doc.xpath("//link[@type='text/css']").each do |css|
     href = "#{dist}/#{css['href']}"
+    content = File.read href
+
+    content.gsub! /url\(([^(]+)\)/, do |url|
+      img = "#{dist}/#{$1}"
+      data = Base64.encode64(File.read(img)).gsub("\n", "\\n")
+      File.delete img
+      "url('data:image/png;base64,#{data}')"
+    end
+
     style = Nokogiri::XML::Node.new "style", doc
-    style.content = File.read href
+    style.content = content
     style['type'] = "text/css"
 
     css.remove

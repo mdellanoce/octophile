@@ -45,7 +45,7 @@ rake
 ```
 
 This will copy all of the static content in the public folder to a folder named dist.
-All of the javascript files will be minified. Javascript and CSS files needed
+All of the javascript files will be minified. Javascript, CSS, and image files needed
 by the follow button iframe will be bundled into the iframe's HTML.
 
 Make sure the app is run in the production environment so that the optimized files
