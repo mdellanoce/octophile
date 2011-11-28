@@ -11,6 +11,10 @@ raise "Expected environment variables #{ID_KEY} and #{SECRET_KEY}" if !client_id
 
 set :protection, :except => :frame_options
 
+configure :production do
+  set :public_folder, File.dirname(__FILE__) + "/dist"
+end
+
 get '/' do
   @title = "GitHub widgets for your website"
   erb :index

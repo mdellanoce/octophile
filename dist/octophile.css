@@ -1,0 +1,88 @@
+body {
+  font-family: helvetica,arial,freesans,clean,sans-serif;
+  text-align: center;
+  min-width: 800px;
+}
+
+body, div, form {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0 auto;
+  width: 500px;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px dotted #DDD;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #4183C4;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#content {
+  text-align: left;
+  margin: 0 auto;
+  width: 310px;
+  padding-bottom: 4em;
+}
+
+#username,#html {
+  display: block;
+  width: 300px;
+  border: 1px solid #DDD;
+  padding: 3px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+#html {
+  height: 80px;
+}
+
+form {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+html, body, #container { height: 100%; }
+body > #container { height: auto; min-height: 100%; }
+
+#container {
+  background: url(images/octocat.png) no-repeat bottom right;
+}
+
+#footer {
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 3em;
+  margin-top: -3em;
+  line-height: 3em !important;
+  background: -moz-linear-gradient(left,  rgba(221,221,221,0) 0%, rgba(221,221,221,1) 50%, rgba(221,221,221,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(221,221,221,0)), color-stop(50%,rgba(221,221,221,1)), color-stop(100%,rgba(221,221,221,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  rgba(221,221,221,0) 0%,rgba(221,221,221,1) 50%,rgba(221,221,221,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  rgba(221,221,221,0) 0%,rgba(221,221,221,1) 50%,rgba(221,221,221,0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  rgba(221,221,221,0) 0%,rgba(221,221,221,1) 50%,rgba(221,221,221,0) 100%); /* IE10+ */
+  background: linear-gradient(left,  rgba(221,221,221,0) 0%,rgba(221,221,221,1) 50%,rgba(221,221,221,0) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00dddddd', endColorstr='#00dddddd',GradientType=1 ); /* IE6-9 */
+}
+
+#footer iframe {
+  vertical-align: baseline !important;
+}
+
+#github-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
