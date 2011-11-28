@@ -35,3 +35,22 @@ rackup -p 8080
 ```
 
 Browse to http://localhost:8080
+
+# Deploying the app
+
+Optimize the static files:
+
+```
+rake
+```
+
+This will copy all of the static content in the public folder to a folder named dist.
+All of the javascript files will be minified. Javascript and CSS files needed
+by the follow button iframe will be bundled into the iframe's HTML.
+
+Make sure the app is run in the production environment so that the optimized files
+get used. To test that this works:
+
+```
+rackup -p 8080 -E production
+```
