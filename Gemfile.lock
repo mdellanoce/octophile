@@ -1,21 +1,42 @@
 GIT
-  remote: git://github.com/mdellanoce/gittycat.git
-  revision: 6631025a99083539f3f848da618ed30326e7389a
+  remote: git://github.com/intridea/omniauth-github.git
+  revision: d6e44c435ded9c99796ad635a793ec6b8a508c68
   specs:
-    gittycat (0.0.1)
-      httparty (~> 0.8.1)
+    omniauth-github (1.0.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
 
 GEM
   remote: http://rubygems.org/
   specs:
+    addressable (2.2.6)
     execjs (1.2.9)
       multi_json (~> 1.0)
-    httparty (0.8.1)
-      multi_json
-      multi_xml
+    faraday (0.7.5)
+      addressable (~> 2.2.6)
+      multipart-post (~> 1.1.3)
+      rack (>= 1.1.0, < 2)
+    faraday_middleware (0.7.0)
+      faraday (~> 0.7.3)
+    hashie (1.2.0)
     multi_json (1.0.3)
-    multi_xml (0.4.1)
+    multipart-post (1.1.4)
     nokogiri (1.5.0)
+    oauth2 (0.5.2)
+      faraday (~> 0.7)
+      multi_json (~> 1.0)
+    octokit (0.6.5)
+      addressable (~> 2.2.6)
+      faraday (~> 0.7.4)
+      faraday_middleware (~> 0.7.0)
+      hashie (~> 1.2.0)
+      multi_json (~> 1.0.2)
+    omniauth (1.0.2)
+      hashie (~> 1.2)
+      rack
+    omniauth-oauth2 (1.0.0)
+      oauth2 (~> 0.5.0)
+      omniauth (~> 1.0)
     rack (1.3.5)
     rack-protection (1.1.4)
       rack
@@ -33,8 +54,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  gittycat!
   nokogiri (~> 1.5)
+  octokit (~> 0.6.5)
+  omniauth-github!
   rake (~> 0.9)
   sinatra (~> 1.3)
   uglifier (~> 1.1)

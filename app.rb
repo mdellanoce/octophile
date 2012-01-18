@@ -1,13 +1,12 @@
 require 'bundler/setup'
 require 'sinatra'
-require 'gittycat'
+require 'omniauth-github'
+require 'octokit'
 
-ID_KEY = 'GITHUB_CLIENT_ID'
-SECRET_KEY = 'GITHUB_CLIENT_SECRET'
-client_id = ENV[ID_KEY]
-client_secret = ENV[SECRET_KEY]
-
-raise "Expected environment variables #{ID_KEY} and #{SECRET_KEY}" if !client_id or !client_secret
+enable :sessions
+use OmniAuth::Builder do
+  provider :github, ENV['GITHUB_CLIENT_ID'], ENV['GITHUB_CLIENT_SECRET']
+end
 
 set :protection, :except => :frame_options
 
@@ -20,21 +19,21 @@ get '/' do
   erb :index
 end
 
+get '/auth/github/callback' do
+  session[:token] = params['omniauth.auth']
+  puts params
+  redirect params['omniauth.origin']
+end
+
 get '/follow/:user' do
-  code = params[:code]
+  code = session[:token]
   
   if code
-    connection = GittyCat::Connection.new({
-      :client_id => client_id,
-      :client_secret => client_secret,
-      :code => code
-    })
+    client = Octokit::Client.new(:login => "me", :oauth_token => code)
+    client.follow! params[:user]
     
-    connection.user.follow params[:user]
-
     redirect "https://github.com/#{params[:user]}"
   else
-    query = "scope=user&client_id=#{client_id}&redirect_uri=#{request.url}"
-    redirect "https://github.com/login/oauth/authorize?#{query}"
+    redirect "/auth/github?origin=" + request.path
   end
 end

@@ -19,4 +19,4 @@
       parent.appendChild(iframe);
     }
   }
-})('http://octophile.com/follow_button.html');
+})('http://localhost:8080/follow_button.html');
